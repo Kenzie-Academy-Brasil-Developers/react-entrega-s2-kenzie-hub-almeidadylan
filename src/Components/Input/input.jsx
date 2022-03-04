@@ -1,8 +1,8 @@
 import { Inputs } from "./style"
-export const Input = ({tipo = "text", texto}) => {
+export const Input = ({tipo = "text", texto, res}) => {
     
     return (       
-            <Inputs type={tipo} placeholder={texto}/>
+            <Inputs  res={res} type={tipo} placeholder={texto}/>
             
     )
 }

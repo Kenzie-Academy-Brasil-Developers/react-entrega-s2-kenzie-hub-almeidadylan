@@ -42,7 +42,6 @@ export const Titulo = styled.h2`
 
 export const Span = styled.span`
     text-align: left;
-    margin-left: 22.5px;
     margin-top: 14px;
     font-size: 12.18px;
 `
@@ -52,4 +51,31 @@ export const H6 = styled.h6`
     color: #868E96;
     text-decoration: none;
     font-size:12px;
+`
+export const H5 = styled.span`
+    margin-left: 22.5px;
+    color:red;
+    font-size: 12.18px;
+`
+export const Input = styled.input`
+    width: 329px;
+    height: 38.5px;
+    background-color: #343B41;
+    border: solid 1px #F8F9FA;
+    color: #F8F9FA;
+    border-radius: 3.21px;
+    margin: 10px auto;
+    padding: 5.5px 10px;
+    font-style: regular;
+    font-size:16px;
+`
+
+export const Description = styled.div`
+    display: flex;
+    flex-direction: row;
+    height: 28px;
+    margin: 0 0 0 22.5px;
+    width: 370px;
+    align-items: flex-end;
+    justify-content: flex-start;
 `

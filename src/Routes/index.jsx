@@ -1,18 +1,46 @@
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min"
 import { DashBord } from "../Pages/DashBord/dashbord";
 import { Login } from "../Pages/Login/login";
-import { Register } from "../Pages/Register/register";
+import { Signup } from "../Pages/Register/register";
+import { useState, useEffect } from "react"
+
 export function Routes () {
+
+    const [ authenticated, setAuthenticated ] = useState(false);
+    const [ BD, setDB ] = useState([]);
+
+    useEffect(() => {
+        const token = JSON.parse(localStorage.getItem("@Kenzie Hub: token"))
+        if(token){
+            return setAuthenticated(true)
+        }
+    }, [authenticated])
+
     return (
+
+
         <Switch>
             <Route exact path="/">
-                <Login/>
+                <Login 
+                    authenticated={authenticated} 
+                    setAuthenticated={setAuthenticated}
+                    BD={BD}
+                    setDB={setDB} 
+                />
             </Route>
             <Route exact path="/signup">
-                <Register/>
+                <Signup 
+                    authenticated={authenticated} 
+                    BD={BD}
+                    setDB={setDB} 
+                />
             </Route>
-            <Route exact path="/dashbord">
-                <DashBord/>
+            <Route exact path="/user/:name">
+                <DashBord  
+                    authenticated={authenticated} 
+                    BD={BD}
+                    setDB={setDB} 
+                />
             </Route>
         </Switch>
     )

@@ -30,7 +30,7 @@ export const Form = styled.form`
 export const Titulo = styled.h2`
     color: #F8F9FA;
     font-size: 14.44px;
-    margin: 42px auto 0 auto;
+    margin: 0px auto 0 auto;
 `
 
 export const Span = styled.span`
@@ -38,5 +38,33 @@ export const Span = styled.span`
     margin-left: 22.5px;
     margin-top: 26.67px;
     font-size: 12.18px;
+`
+
+export const Button = styled.button`
+    background-color: ${(props) => (props.color === "pink"? ("#FF577F") : ((props.color === "gray"? ("#868E96") : ((props.color === "black"? ("#212529") : ("#59323F"))))))}};
+    color: ${(props) => (props.color === "pink"? ("#fff") : ((props.color === "gray" || props.color === "black"? ("#F8F9FA") : ("#fff"))))}};
+    width: ${(props) => (props.width + "px")};
+    height: ${(props) => (props.height === 48? ("48px") : (props.height + "px"))};
+    font-size: 16px;
+    margin-top: ${(props) => (props.margT? ( props.margT + "px") : ("auto"))};
+    margin-right: ${(props) => (props.margR? ( props.margR + "px") : ("auto"))};
+    margin-left: ${(props) => (props.margL?  ( props.margL + "px") : ("auto"))};
+    margin-bottom: ${(props) => (props.margB? ( props.margB + "px") : ("auto"))};
+    border-radius: 4.06px;
+    border: none;
+    cursor: pointer;
+`
+
+export const Input = styled.input`
+    width: 329px;
+    height: 38.5px;
+    background-color: #343B41;
+    border: solid 1px #F8F9FA;
+    color: #F8F9FA;
+    border-radius: 3.21px;
+    margin: 10px auto;
+    padding: 5.5px 10px;
+    font-style: regular;
+    font-size:16px;
 `
 
