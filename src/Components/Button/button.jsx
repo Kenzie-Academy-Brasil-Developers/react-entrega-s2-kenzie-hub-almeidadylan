@@ -15,4 +15,4 @@ function Button({height=48, text, color, width = 345, margT=24.21, margR, margB=
         </Buttons>
     )
 }
-export default Button
+//export default Button

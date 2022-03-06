@@ -80,16 +80,11 @@ export function Signup({ authenticated, BD, setDB}) {
     <Section>
       <Header>
         <Logo>Kenzie Hub</Logo>
-        <Link to="/">
-          <Button
-            text={"Voltar"}
-            width={79.54}
-            color={"black"}
-            margR={1}
-            margL={1}
-          />
-        </Link>
-      </Header>
+      
+          <button
+            onClick={() => history.push("/")}
+          >Voltar</button>
+        </Header>
       <Form onSubmit={handleSubmit(onSubmitFunction)}>
         <Titulo>Crie sua conta</Titulo>
         <Div>
@@ -144,7 +139,7 @@ export function Signup({ authenticated, BD, setDB}) {
             <option value="Terceiro módulo (Introdução ao Backend)">Terceiro Módulo</option>
             <option value="Quarto módulo (Backend Avançado)">Quarto Módulo</option>
         </select>
-        <Button type="submit" text={"Cadastrar"} color={""} />
+        <button type="submit" >Cadastrar</button>
       </Form>
     </Section>
   );
