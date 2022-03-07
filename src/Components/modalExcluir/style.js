@@ -5,6 +5,11 @@ export const Form = styled.div`
     width: 296px;
     height: 320px;
     position: absolute;
+    @media(min-width: 800px){
+        border-radius: 4px;
+        width: 369px;
+        height: 360px;
+    }
 `
 
 export const Header = styled.header`
@@ -16,6 +21,10 @@ export const Header = styled.header`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    @media(min-width: 800px){
+        justify-content: space-between;
+        height: 55.11px;
+    }
 
 `
 
@@ -27,6 +36,9 @@ export const Btn = styled.button`
     font-size: 18.83px;
     font-weight: bold;
     cursor: pointer;
+    @media(min-width: 800px){
+        margin: 0 20px 0 0;
+    }
 `
 export const Span = styled.span`
     color: #F8F9FA;
@@ -46,13 +58,33 @@ export const Input = styled.input`
     padding: 5.5px 10px;
     font-style: regular;
     font-size:16px;
+    @media(min-width: 800px){
+        width: 298px;
+        height: 35.37px;
+    }
 `
 
-export const Button = styled.button`
-    background-color: ${(props) => (props.color === "pink"? ("#FF577F") : ((props.color === "gray"? ("#868E96") : ((props.color === "black"? ("#212529") : ("#59323F"))))))}};
-    color: ${(props) => (props.color === "pink"? ("#fff") : ((props.color === "gray" || props.color === "black"? ("#F8F9FA") : ("#fff"))))}};
-    width: ${(props) => (props.width + "px")};
-    height: ${(props) => (props.height === 48? ("48px") : (props.height + "px"))};
+export const Button1 = styled.button`
+    background-color: #59323F;
+    color: #fff;
+    width: 163.09px;
+    height: 38.37px;
+    font-size: 16px;
+    margin: 16.6px auto auto auto;
+    border-radius: 4.06px;
+    border: none;
+    cursor: pointer;
+    padding: 8.25px auto;
+    @media(min-width: 800px){
+        width: 204px;
+        height: 48.5px;
+    }
+`
+export const Button2 = styled.button`
+    background-color: #868E96;
+    color: #F8F9FA;
+    width: 78.35px;
+    height: 38.37px;
     font-size: 16px;
     margin-top: ${(props) => (props.margT? ( props.margT + "px") : ("auto"))};
     margin-right: ${(props) => (props.margR? ( props.margR + "px") : ("auto"))};
@@ -62,6 +94,10 @@ export const Button = styled.button`
     border: none;
     cursor: pointer;
     padding: 8.25px auto;
+    @media(min-width: 800px){
+        width: 98px;
+        height: 48.5px;
+    }
 `
 export const Select = styled.select`
     display: block;
@@ -72,4 +108,14 @@ export const Select = styled.select`
     width: 265.76px;
     height: 38.37px;
     padding: 5.5px 10px;
+    @media(min-width: 800px){
+        width: 320px;
+        height: 48.5px;
+    }
+`
+
+export const H5 = styled.h5`
+    @media(min-width: 800px){
+        margin: 0 0 0 20px;
+    }
 `

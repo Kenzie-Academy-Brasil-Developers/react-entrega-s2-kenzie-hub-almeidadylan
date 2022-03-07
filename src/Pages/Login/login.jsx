@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 //import Button from "../../Components/Button/button";
-import { Logo, Section, Form, Titulo, Span, Div, Input } from "./style";
+import { Logo, Section, Form, Titulo, Span, Div, Input, Button } from "./style";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -82,12 +82,12 @@ export function Login({
           type="password"
           placeholder="Digite sua senha"
         />
-        <button type="submit">Entrar</button>
+        <Button type="submit" color={"pink"} margT={19.42} width={264.9} height={40.5} margB={17.27} >Entrar</Button>
         <Div>
           <Link to="/signup">Ainda não possui uma conta?</Link>
         </Div>
+        <Button onClick={() => history.push("/signup")} color={"gray"} margT={17.65} width={264.9} height={40.5} margB={1} >Cadastra-se</Button>
       </Form>
-      <button onClick={() => history.push("/signup")}>Cadastra-se</button>
     </Section>
   );
 }

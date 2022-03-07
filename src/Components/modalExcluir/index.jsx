@@ -1,4 +1,4 @@
-import { Btn, Header, Form, Span, Input, Button, Select } from "./style";
+import { Btn, Header, Form, Span, Input, Select, H5, Button2, Button1 } from "./style";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -56,8 +56,9 @@ export function ModalExcluir({
   return (
     <Form>
       <Header>
-        <h5>Tecnologia Detalhes</h5>
-        <button onClick={() => setModalExcluir(false)}>x</button>
+        <H5>Tecnologia Detalhes</H5>
+        <Btn onClick={() => setModalExcluir(false)}
+        >x</Btn>
       </Header>
       <Span>Nome do Projeto</Span>
       <Input placeholder="tecnologia" />
@@ -68,8 +69,18 @@ export function ModalExcluir({
         <option value="Avançado">Avançado </option>
       </Select>
 
-      <button onClick={() => updateTech(currentTech.id, status)} >Salvar alterações</button>
-      <button onClick={() => deleteTech(currentTech.id)}>Excluir</button>
+      <Button1 onClick={() => updateTech(currentTech.id, status)} 
+      width={163.09}
+      height={38.37}
+      margT={16.6}
+      >Salvar alterações</Button1>
+      <Button2 onClick={() => deleteTech(currentTech.id)}
+      color={"gray"}
+      width={78.35}
+      height={38.37}
+      margT={25}
+      margL={20}
+      >Excluir</Button2>
     </Form>
   );
 }

@@ -5,6 +5,12 @@ export const Form = styled.form`
     width: 296px;
     height: 320px;
     position: absolute;
+    border-radius: 4px;
+    @media(min-width: 800px){
+        border-radius: 4px;
+        width: 369px;
+        height: 362px;
+    }
 `
 
 export const Header = styled.header`
@@ -16,6 +22,10 @@ export const Header = styled.header`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    @media(min-width: 800px){
+        justify-content: space-between;
+        height: 55.11px;
+    }
 
 `
 
@@ -27,6 +37,9 @@ export const Btn = styled.button`
     font-size: 18.83px;
     font-weight: bold;
     cursor: pointer;
+    @media(min-width: 800px){
+        margin: 0 20px 0 0;
+    }
 `
 export const Span = styled.span`
     color: #F8F9FA;
@@ -46,6 +59,10 @@ export const Input = styled.input`
     padding: 5.5px 10px;
     font-style: regular;
     font-size:16px;
+    @media(min-width: 800px){
+        width: 298px;
+        height: 35.37px;
+    }
 `
 
 export const Button = styled.button`
@@ -62,6 +79,10 @@ export const Button = styled.button`
     border: none;
     cursor: pointer;
     padding: 8.25px auto;
+    @media(min-width: 800px){
+        width: 320px;
+        height: 48.5px;
+    }
 `
 export const Select = styled.select`
     display: block;
@@ -72,4 +93,13 @@ export const Select = styled.select`
     width: 265.76px;
     height: 38.37px;
     padding: 5.5px 10px;
+    @media(min-width: 800px){
+        width: 320px;
+        height: 48.5px;
+    }
+`
+export const H5 = styled.h5`
+    @media(min-width: 800px){
+        margin: 0 0 0 20px;
+    }
 `

@@ -10,8 +10,11 @@ import {
   H5,
   Input,
   Description,
+  Button,
+  Select,
+  Btn
 } from "./style";
-import Button from "../../Components/Button/button";
+//import Button from "../../Components/Button/button";
 //import { Input } from "../../Components/Input/input";
 import { Link, Redirect } from "react-router-dom";
 import * as yup from "yup";
@@ -21,7 +24,7 @@ import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import api from "../../services/api";
-import { Select } from "../../Components/Select/select";
+//import { Select } from "../../Components/Select/select";
 import { useState } from "react";
 
 export function Signup({ authenticated, BD, setDB}) {
@@ -81,9 +84,15 @@ export function Signup({ authenticated, BD, setDB}) {
       <Header>
         <Logo>Kenzie Hub</Logo>
       
-          <button
+          <Btn
             onClick={() => history.push("/")}
-          >Voltar</button>
+            color={"black"}
+            height={30.58}
+            width={79.54}
+            margL={1}
+            margR={1}
+          >Voltar
+          </Btn>
         </Header>
       <Form onSubmit={handleSubmit(onSubmitFunction)}>
         <Titulo>Crie sua conta</Titulo>
@@ -132,14 +141,16 @@ export function Signup({ authenticated, BD, setDB}) {
           <Span>Selecionar modulo</Span>
           {errors.course_module?.message && <H5>{errors.course_module.message}</H5>}
         </Description>
-        <select
+        <Select
         {...register("course_module")}>
             <option value="Primeiro Módulo (Introdução ao Frontend)">Primeiro Módulo</option>
             <option value="Segundo módulo (Frontend Avançado)">Segundo Módulo</option>
             <option value="Terceiro módulo (Introdução ao Backend)">Terceiro Módulo</option>
             <option value="Quarto módulo (Backend Avançado)">Quarto Módulo</option>
-        </select>
-        <button type="submit" >Cadastrar</button>
+        </Select>
+        <Button type="submit" width={260.65} height={38.38} margT={10} margB={1}
+        
+        >Cadastrar</Button>
       </Form>
     </Section>
   );

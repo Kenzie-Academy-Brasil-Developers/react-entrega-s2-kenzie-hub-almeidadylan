@@ -1,4 +1,4 @@
-import { Btn, Header, Form, Span, Input, Button, Select } from "./style";
+import { Btn, Header, Form, Span, Input, Button, Select, H5 } from "./style";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -35,7 +35,7 @@ export function Modal({ setModal, BD, techs, setTechs, chamarUsuario }) {
   return (
     <Form onSubmit={handleSubmit(onSubmitFunction)}>
       <Header>
-        <h5>Cadastrar Tecnologia</h5>
+        <H5>Cadastrar Tecnologia</H5>
         <Btn onClick={() => setModal(false)}>x</Btn>
       </Header>
       <Span>Nome</Span>
@@ -44,14 +44,18 @@ export function Modal({ setModal, BD, techs, setTechs, chamarUsuario }) {
       <Select {...register("status")}>
         <option value="Iniciante">Iniciante</option>
         <option value="Intermediario">Intermediario</option>
-        <option value="Avancado">Avançado </option>
+        <option value="Avançado">Avançado </option>
       </Select>
 
-      <button
+      <Button
         type="submit"
+        color={"pink"}
+        width={259.9}
+        height={40.5}
+        margT={25}
       >
         Cadastrar Tecnologia
-      </button>
+      </Button>
     </Form>
   );
 }

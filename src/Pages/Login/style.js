@@ -5,8 +5,9 @@ export const Section = styled.section`
     flex-direction: column;
     align-items: center;
     height: 600px;
-    width: 450px;
+    width: 400px;
     justify-content: flex-start;
+    align-items: center;
 `
 export const Logo = styled.h2`
     color: #FF577F;
@@ -22,10 +23,14 @@ export const Form = styled.form`
     background-color: #212529;
     display: flex;
     flex-direction: column;
-    height: 600px;
-    width: 400px;
+    height: 450px;
+    width: 296px;
     border-radius: 4px;
     justify-content: center;
+    @media(min-width: 700px){
+        width: 396px;
+        height: 502px;
+    }
 `
 export const Titulo = styled.h2`
     color: #F8F9FA;
@@ -53,11 +58,16 @@ export const Button = styled.button`
     border-radius: 4.06px;
     border: none;
     cursor: pointer;
+    padding: 8.25px 20px;
+    @media(min-width: 700px){
+        width: 334px;
+        height: 48px;
+    }
 `
 
 export const Input = styled.input`
-    width: 329px;
-    height: 38.5px;
+    width: 243px;
+    height: 35.5px;
     background-color: #343B41;
     border: solid 1px #F8F9FA;
     color: #F8F9FA;
@@ -66,5 +76,8 @@ export const Input = styled.input`
     padding: 5.5px 10px;
     font-style: regular;
     font-size:16px;
+    @media(min-width: 700px){
+        width: 309.93px;
+    }
 `
 
