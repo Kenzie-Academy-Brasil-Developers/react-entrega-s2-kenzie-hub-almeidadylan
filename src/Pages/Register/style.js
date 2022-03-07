@@ -39,7 +39,7 @@ export const Form = styled.form`
     background-color: #212529;
     display: flex;
     flex-direction: column;
-    height: 570px;
+    height: 620px;
     width: 295.83px;
     border-radius: 4px;
     justify-content: center;
