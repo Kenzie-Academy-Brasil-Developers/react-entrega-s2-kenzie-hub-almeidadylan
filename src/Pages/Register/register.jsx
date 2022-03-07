@@ -14,9 +14,7 @@ import {
   Select,
   Btn
 } from "./style";
-//import Button from "../../Components/Button/button";
-//import { Input } from "../../Components/Input/input";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -24,10 +22,8 @@ import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import api from "../../services/api";
-//import { Select } from "../../Components/Select/select";
-import { useState } from "react";
 
-export function Signup({ authenticated, BD, setDB}) {
+export function Signup({ authenticated, bancoDeDados}) {
 
 
   const signupSchema = yup.object().shape({
@@ -63,19 +59,18 @@ export function Signup({ authenticated, BD, setDB}) {
     api
       .post("/users", user)
       .then((response) => {
-        //console.log(response.data);
+
         toast.success("Conta criada com sucesso!");
         history.push("/");
       })
       .catch((err) => {
-        console.log(err);
+
         toast.error("Erro ao criar a conta, tente outro email");
       });
   };
-  console.log(errors);
 
   if(authenticated){
-    return <Redirect to={`/user/${BD.name}`} />
+    return <Redirect to={`/user/${bancoDeDados.name}`} />
   }
 
 

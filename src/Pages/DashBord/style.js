@@ -170,3 +170,7 @@ export const Espace = styled.div`
     width: 240px;
 `
 
+export const Info = styled.h2`
+    color: #fff;
+    font-size: 20px;
+`

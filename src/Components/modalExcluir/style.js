@@ -86,10 +86,7 @@ export const Button2 = styled.button`
     width: 78.35px;
     height: 38.37px;
     font-size: 16px;
-    margin-top: ${(props) => (props.margT? ( props.margT + "px") : ("auto"))};
-    margin-right: ${(props) => (props.margR? ( props.margR + "px") : ("auto"))};
-    margin-left: ${(props) => (props.margL?  ( props.margL + "px") : ("auto"))};
-    margin-bottom: ${(props) => (props.margB? ( props.margB + "px") : ("auto"))};
+    margin: 25px auto auto 20px;
     border-radius: 4.06px;
     border: none;
     cursor: pointer;

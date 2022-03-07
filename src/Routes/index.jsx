@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 export function Routes() {
   const [authenticated, setAuthenticated] = useState(false);
-  const [BD, setDB] = useState([]);
+  const [ bancoDeDados, setBancoDeDados] = useState([]);
   const [techs, setTechs] = useState([]);
 
   useEffect(() => {
@@ -20,16 +20,12 @@ export function Routes() {
     <Switch>
       <Route exact path="/">
         <Login
-          techs={techs}
-          setTechs={setTechs}
           authenticated={authenticated}
           setAuthenticated={setAuthenticated}
-          BD={BD}
-          setDB={setDB}
         />
       </Route>
       <Route exact path="/signup">
-        <Signup authenticated={authenticated} BD={BD} setDB={setDB} />
+        <Signup authenticated={authenticated} bancoDeDados={bancoDeDados} />
       </Route>
       <Route exact path="/user">
         <DashBord
@@ -37,8 +33,8 @@ export function Routes() {
           techs={techs}
           setTechs={setTechs}
           authenticated={authenticated}
-          BD={BD}
-          setDB={setDB}
+          bancoDeDados={bancoDeDados}
+          setBancoDeDados={setBancoDeDados}
         />
       </Route>
     </Switch>

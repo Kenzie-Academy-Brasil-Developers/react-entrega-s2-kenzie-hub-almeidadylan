@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-//import Button from "../../Components/Button/button";
 import { Logo, Section, Form, Titulo, Span, Div, Input, Button } from "./style";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
@@ -8,16 +7,10 @@ import { useHistory } from "react-router-dom";
 import api from "../../services/api";
 import { toast } from "react-toastify";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
-import { useState } from "react";
-import { useEffect } from "react";
 
 export function Login({
   authenticated,
   setAuthenticated,
-  BD,
-  setDB,
-  techs,
-  setTechs,
 }) {
   const history = useHistory();
   const signupSchema = yup.object().shape({
@@ -39,13 +32,11 @@ export function Login({
   
 
   const onSubmitFunction = (data) => {
-    //  console.log(data)
+
     api
       .post("/sessions", data)
-      .then((response) => {
-          console.log(response)
-       
-            //   console.log(BD)
+      .then((response) => {       
+
         const { token } = response.data;
 
         localStorage.setItem("@KenzieHub:token", JSON.stringify(token));
@@ -57,7 +48,6 @@ export function Login({
       })
       .catch((err) => toast.error("Email ou senha invalidos"));
   };
-  //console.log(BD)
 
   if (authenticated) {
     return <Redirect to={`/user`} />;

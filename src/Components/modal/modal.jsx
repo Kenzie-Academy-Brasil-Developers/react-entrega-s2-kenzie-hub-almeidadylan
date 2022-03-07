@@ -1,18 +1,14 @@
 import { Btn, Header, Form, Span, Input, Button, Select, H5 } from "./style";
-import * as yup from "yup";
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 import api from "../../services/api";
-import { useState } from "react";
 
-export function Modal({ setModal, BD, techs, setTechs, chamarUsuario }) {
+export function Modal({ setModal, techs, setTechs }) {
   const token = JSON.parse(localStorage.getItem("@KenzieHub:token"));
 
   const { register, handleSubmit } = useForm()
 
   const onSubmitFunction = (data) => {
-      console.log(data)
     api
       .post("/users/techs", data, {
         headers: {
@@ -20,7 +16,6 @@ export function Modal({ setModal, BD, techs, setTechs, chamarUsuario }) {
         },
       })
       .then((response) => {
-        console.log(response);
         setTechs([...techs, response.data]);
         toast.success("Tecnologia criada com sucesso!");
         setModal(false)
@@ -36,7 +31,9 @@ export function Modal({ setModal, BD, techs, setTechs, chamarUsuario }) {
     <Form onSubmit={handleSubmit(onSubmitFunction)}>
       <Header>
         <H5>Cadastrar Tecnologia</H5>
-        <Btn onClick={() => setModal(false)}>x</Btn>
+        <Btn onClick={() => setModal(false)}>
+          x
+        </Btn>
       </Header>
       <Span>Nome</Span>
       <Input {...register("title")} placeholder="tecnologia" />
